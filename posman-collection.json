@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "8cca2898-a6bd-4365-91ef-7fb2a8e26c70",
+		"name": "fleet-gps-tracking-microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19806847"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"rio@mail.com\",\n    \"password\":\"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "gps",
+			"item": [
+				{
+					"name": "accept gps log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpb0BtYWlsLmNvbSIsImlhdCI6MTc0NjYwMDE2NiwiZXhwIjoxNzQ2Njg2NTY2fQ.pLkalugwzF3JCPmcbjNlt3AR9EDj4PffhpjvjYP9UnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"vehicleId\": \"7053fca3-0e8e-4d9a-a3a7-ea652f42661a\",\n  \"latitude\": -6.200000,\n  \"longitude\": 106.816666,\n  \"speed\": 85.5,\n  \"timestamp\": \"2025-05-07T14:30:00.000Z\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/gps",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"gps"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vehicle",
+			"item": [
+				{
+					"name": "vehicle last location",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpb0BtYWlsLmNvbSIsImlhdCI6MTc0NjYwMDE2NiwiZXhwIjoxNzQ2Njg2NTY2fQ.pLkalugwzF3JCPmcbjNlt3AR9EDj4PffhpjvjYP9UnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/vehicles/7053fca3-0e8e-4d9a-a3a7-ea652f42661a/last-location",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicles",
+								"7053fca3-0e8e-4d9a-a3a7-ea652f42661a",
+								"last-location"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehicle histories log",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJpb0BtYWlsLmNvbSIsImlhdCI6MTc0NjYwMDE2NiwiZXhwIjoxNzQ2Njg2NTY2fQ.pLkalugwzF3JCPmcbjNlt3AR9EDj4PffhpjvjYP9UnQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/vehicles/7053fca3-0e8e-4d9a-a3a7-ea652f42661a/last-location",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"vehicles",
+								"7053fca3-0e8e-4d9a-a3a7-ea652f42661a",
+								"last-location"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
